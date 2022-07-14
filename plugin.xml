@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         point="org.grits.toolbox.core.preferencePages">
+      <page
+            category="org.grits.toolbox.entry.ms.annotation.glycan.all"
+            class="org.grits.toolbox.entry.ms.annotation.glycan.preference.cartoon.MSGlycanAnnotationCartoonPreferencePage"
+            id="plugin.ms.annotation.preference.MSAnnotationCartoonPreference"
+            name="Cartoon Style">
+      </page>
+      <page
+            category="org.grits.toolbox.entry.ms.annotation.glycan.all"
+            class="org.grits.toolbox.entry.ms.annotation.glycan.preference.viewer.MSGlycanAnnotationViewerPreferencePage"
+            id="plugin.ms.annotation.glycan.preference.viewer.MSGlycanAnnotationViewerPreference"
+            name="Results Viewer">
+      </page>
+      <page
+            category="org.grits.toolbox.entry.ms.annotation.glycan.all"
+            class="org.grits.toolbox.entry.ms.annotation.glycan.preference.viewer.MSGlycanAnnotationByonicPreferencePage"
+            id="org.grits.toolbox.entry.ms.annotation.glycan.byonic.all"
+            name="Byonic Preferences">
+      </page>
+      <page
+            category="org.grits.toolbox.entry.ms.annotation.glycan.all"
+            class="org.grits.toolbox.entry.ms.annotation.glycan.preference.MSGlycanAnnotationFilterPreferencePage"
+            id="org.grits.toolbox.entry.ms.annotation.glycan.filter"
+            name="Filter Settings">
+      </page>
+      <page
+            category="org.grits.toolbox.entry.ms.annotation.glycan.filter"
+            class="org.grits.toolbox.entry.ms.annotation.glycan.preference.MSGlycanCustomFilterCategoryPage"
+            id="org.grits.toolbox.entry.ms.annotation.glycan.filter.category"
+            name="Filter Categories">
+      </page>
+      <page
+            category="org.grits.toolbox.entry.ms.annotation.glycan.filter"
+            class="org.grits.toolbox.entry.ms.annotation.glycan.preference.MSGlycanCustomFilterPreferencePage"
+            id="org.grits.toolbox.entry.ms.annotation.glycan.filter.custom"
+            name="Named Filters">
+      </page>
+      <page
+            category="org.grits.toolbox.entry.ms.annotation.glycan.all"
+            class="org.grits.toolbox.entry.ms.annotation.glycan.preference.MSGlycanAnnotationCustomAnnotationPreferencePage"
+            id="org.grits.toolbox.entry.ms.annotation.glycan.customAnnotation"
+            name="Custom Annotation">
+      </page>
+      <page
+            category="org.grits.toolbox.entry.ms.topLevel"
+            class="org.grits.toolbox.entry.ms.annotation.glycan.preference.MSGlycanAnnotationTopLevelPreferencePage"
+            id="org.grits.toolbox.entry.ms.annotation.glycan.all"
+            name="MS Glycan Annotation">
+      </page>
+   </extension>
+   <extension
+         point="org.grits.toolbox.core.propertyreader">
+      <reader
+            class="org.grits.toolbox.entry.ms.annotation.glycan.property.io.MSGlycanAnnotationPropertyReader"
+            propertyId="org.grits.toolbox.property.ms_annotation.glycan">
+      </reader>
+   </extension>
+   <extension
+         id="org.grits.toolbox.entry.ms.annotation.glycan.fragment"
+         point="org.eclipse.e4.workbench.model">
+      <fragment
+            uri="fragment.e4xmi">
+      </fragment>
+   </extension>
+
+</plugin>

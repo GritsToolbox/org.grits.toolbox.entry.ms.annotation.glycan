@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<msGlycanAnnotationPreference name="TIM O-Glycans">
+    <method accuracy="2.0" accuracyPpm="false" annotationSrc="GRITS" annotationType="GLYCAN" fragAccuracy="500.0" fragAccuracyPpm="true" intensityCutoff="0.05" intensityCutoffType="Percentage" maxIonCount="4" monoisotopic="false" precursorIntensityCutoff="0.0" precursorIntensityCutoffType="Percentage" shift="0.0" trustCharge="false" version="1.02">
+        <ion charge="1" polarity="true" label="Na" mass="22.98976967" name="Sodium">
+            <ionCount>4</ionCount>
+        </ion>
+        <AnalyteSetting>
+            <GlycanSettings allowInnerFrags="false" maxNumOfCleavages="2" maxNumOfCrossRingCleavages="0" DerivType="perMe">
+                <GlycanFilter database="O-Glycan-topology.xml" useDatabaseStructureMetaInfo="false" version="1.0"/>
+                <ReducingEnd label="redEnd" type="redEnd"/>
+                <Fragments number="-1" type="B"/>
+                <Fragments number="-1" type="Y"/>
+                <Fragments number="-1" type="C"/>
+                <Fragments number="-1" type="Z"/>
+            </GlycanSettings>
+        </AnalyteSetting>
+        <booleanProp/>
+        <doubleProp/>
+        <integerProp/>
+        <stringProp/>
+    </method>
+</msGlycanAnnotationPreference>

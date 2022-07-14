@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<msGlycanAnnotationPreference name="N-Glycan PeakPicker Orbi Human">
+    <method accuracy="600.0" accuracyPpm="true" annotationSrc="GRITS" annotationType="GLYCAN" fragAccuracy="350.0" fragAccuracyPpm="true" intensityCutoff="0.5" intensityCutoffType="Percentage" maxIonCount="5" monoisotopic="true" precursorIntensityCutoff="3.0" precursorIntensityCutoffType="Percentage" shift="0.0" trustCharge="true" version="1.02">
+        <ion charge="1" polarity="true" label="Na" mass="22.98976967" name="Sodium">
+            <ionCount>4</ionCount>
+        </ion>
+        <AnalyteSetting>
+            <GlycanSettings allowInnerFrags="false" maxNumOfCleavages="2" maxNumOfCrossRingCleavages="0" DerivType="perMe">
+                <GlycanFilter database="N-Glycan-topology.xml" useDatabaseStructureMetaInfo="false" version="1.0"/>
+                <ReducingEnd label="freeEnd" type="freeEnd"/>
+                <Fragments number="-1" type="B"/>
+                <Fragments number="-1" type="Y"/>
+                <Fragments number="-1" type="C"/>
+                <Fragments number="-1" type="Z"/>
+                <filter-setting name="Pre-Filter Human monosaccharides">
+                    <description>no KDN KDO Pent gal-gal etc</description>
+                    <AND>
+                        <NOT>
+                            <monosaccharideFilter terminalOnly="false" min="1" classification="Monosaccharide" label="NeuGc" name="NeuGc">
+<description>N-Glycolyl Sialic Acid residues</description>
+<monosaccharide allowModifications="false" allowSubstituents="false">
+    <sequence>RES
+1b:x-dgro-dgal-NON-2:6|1:a|2:keto|3:d
+2s:n-glycolyl
+LIN
+1:1d(5+1)2n</sequence>
+</monosaccharide>
+                            </monosaccharideFilter>
+                        </NOT>
+                        <NOT>
+                            <monosaccharideFilter terminalOnly="false" min="1" classification="Monosaccharide" label="Neu" name="Neu">
+<description>Neuraminic Acid residues</description>
+<monosaccharide allowModifications="false" allowSubstituents="false">
+    <sequence>RES
+1b:x-dgro-dgal-NON-2:6|1:a|2:keto|3:d
+2s:amino
+LIN
+1:1d(5+1)2n</sequence>
+</monosaccharide>
+                            </monosaccharideFilter>
+                        </NOT>
+                        <NOT>
+                            <monosaccharideFilter terminalOnly="false" min="1" classification="Monosaccharide" label="Pentose" name="Pentose">
+<description>Number of Pentose (Xylose, Arabinose etc.) residues</description>
+<monosaccharide allowModifications="false" allowSubstituents="false">
+    <sequence>RES
+1b:x-PEN-x:x</sequence>
+</monosaccharide>
+                            </monosaccharideFilter>
+                        </NOT>
+                        <NOT>
+                            <monosaccharideFilter terminalOnly="false" min="1" classification="Monosaccharide" label="KDN" name="KDN">
+<description>2-Keto-3-deoxy-D-glycero-D-galacto-nononic acid residues</description>
+<monosaccharide allowModifications="false" allowSubstituents="false">
+    <sequence>RES
+1b:x-dgro-dgal-NON-x:x|1:a|2:keto|3:d</sequence>
+</monosaccharide>
+                            </monosaccharideFilter>
+                        </NOT>
+                        <NOT>
+                            <monosaccharideFilter terminalOnly="false" min="1" classification="Monosaccharide" label="KDO" name="KDO">
+<description>3-Deoxy-D-manno-oct-2-ulosonic acid residues</description>
+<monosaccharide allowModifications="false" allowSubstituents="false">
+    <sequence>RES
+1b:x-dman-OCT-x:x|1:a|2:keto|3:d</sequence>
+</monosaccharide>
+                            </monosaccharideFilter>
+                        </NOT>
+                        <NOT>
+                            <substituentFilter substituent="sulfate" min="1" classification="Modification" label="Sulphate" name="Sulphate">
+<description>Sulphate modification</description>
+                            </substituentFilter>
+                        </NOT>
+                        <NOT>
+                            <substituentFilter substituent="phosphate" min="1" classification="Modification" label="Phosphate" name="Phosphate">
+<description>Phosphate modification</description>
+                            </substituentFilter>
+                        </NOT>
+                    </AND>
+                </filter-setting>
+            </GlycanSettings>
+        </AnalyteSetting>
+        <booleanProp/>
+        <doubleProp/>
+        <integerProp/>
+        <stringProp/>
+    </method>
+</msGlycanAnnotationPreference>

@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<filtersLibrary name="MS Plugin Filter" version="1.12.0">
+	<categories name="N-Glycan" label="N-Glycan Filters">
+		<description>Filters applicable to N-Glycans</description>
+		<filters>
+			<filters>Hex</filters>
+			<filters>GlcNAc (terminal)</filters>
+			<filters>GalNAc (terminal)</filters>
+			<filters>HexNAc</filters>
+			<filters>Gal (terminal)</filters>
+			<filters>dHex</filters>
+			<filters>Fuc (terminal)</filters>
+			<filters>NeuAc</filters>
+			<filters># Antenna</filters>
+			<filters>NeuGc</filters>
+			<filters>Neu</filters>
+			<filters>GalGal</filters>
+			<filters>Pentose</filters>
+			<filters>KDN</filters>
+			<filters>bisected</filters>
+			<filters>HexA</filters>
+			<filters>core-Fuc</filters>
+			<filters>Lewis X/A</filters>
+			<filters>HexN</filters>
+			<filters>Lewis Y/B</filters>
+			<filters>KDO</filters>
+			<filters>N-Glycan Type</filters>
+			<filters>Sulphate</filters>
+			<filters>Phosphate</filters>
+			<filters>Fully defined</filters>
+			<filters>LacDiNAc</filters>
+			<filters>Sialyl-Lewis X/A</filters>
+			<filters>Fuc-LacDiNAc</filters>
+			<filters>Blood Group O,H</filters>
+			<filters>Blood Group B</filters>
+			<filters>Blood Group A</filters>
+			<filters>Sialyl-LacDiNAc</filters>
+			<filters>Sialyl-Fuc-LacDiNAc</filters>
+			<filters>Sda Antigen</filters>
+		</filters>
+	</categories> 
+	<categories name="O-Glycan" label="O-Glycan Filters">
+		<description>Filters applicable to O-Glycans</description>
+		<filters>
+			<filters>Hex</filters>
+			<filters>GlcNAc (terminal)</filters>
+			<filters>GalNAc (terminal)</filters>
+			<filters>HexNAc</filters>
+			<filters>Gal (terminal)</filters>
+			<filters>dHex</filters>
+			<filters>Fuc (terminal)</filters>
+			<filters>NeuAc</filters>
+			<filters>Neu</filters>
+			<filters># Antenna</filters>
+			<filters>NeuGc</filters>
+			<filters>GalGal</filters>
+			<filters>Pentose</filters>
+			<filters>KDN</filters>
+			<filters>HexA</filters>
+			<filters>Lewis X/A</filters>
+			<filters>HexN</filters>
+			<filters>Lewis Y/B</filters>
+			<filters>KDO</filters>
+			<filters>O-Glycan Type</filters>
+			<filters>Sulphate</filters>
+			<filters>Phosphate</filters>
+			<filters>Fully defined</filters>
+			<filters>LacDiNAc</filters>
+			<filters>Sialyl-Lewis X/A</filters>
+			<filters>Fuc-LacDiNAc</filters>
+			<filters>Blood Group O,H</filters>
+			<filters>Blood Group B</filters>
+			<filters>Blood Group A</filters>
+			<filters>Sialyl-LacDiNAc</filters>
+			<filters>Sialyl-Fuc-LacDiNAc</filters>
+			<filters>Sda Antigen</filters>
+		</filters>
+	</categories> 
+	<monosaccharideFilter min="0" label="Hex" name="Hex" terminalOnly="false" classification="Monosaccharide">
+		<description>Hexose (Glucose, Galactose, Mannose etc.) residues</description>
+		<monosaccharide allowModifications="false" allowSubstituents="false">
+			<sequence>RES
+1b:x-HEX-x:x</sequence>
+		</monosaccharide>
+	</monosaccharideFilter>
+	<monosaccharideFilter min="0" label="GlcNAc (terminal)" name="GlcNAc (terminal)" terminalOnly="true" classification="Motif">
+        <description>Terminal GlcNAc residues</description>
+        <monosaccharide allowModifications="false" allowSubstituents="false">
+            <sequence>RES
+1b:x-dglc-HEX-1:5
+2s:n-acetyl
+LIN
+1:1d(2+1)2n</sequence>
+        </monosaccharide>
+    </monosaccharideFilter>
+	<monosaccharideFilter min="0" label="HexNAc" name="HexNAc" terminalOnly="false" classification="Monosaccharide">
+		<description>N-acetylhexosamine (GlcNAc, GalNAc etc.) residues</description>
+		<monosaccharide allowModifications="false" allowSubstituents="false">
+			<sequence>RES
+1b:x-HEX-1:5
+2s:n-acetyl
+LIN
+1:1d(2+1)2n</sequence>
+		</monosaccharide>
+	</monosaccharideFilter>	
+	 <monosaccharideFilter min="0" label="Gal (terminal)" name="Gal (terminal)" terminalOnly="true" classification="Motif">
+        <description>Terminal Galactose residues</description>
+        <monosaccharide allowModifications="false" allowSubstituents="false">
+            <sequence>RES
+1b:x-dgal-HEX-1:5</sequence>
+        </monosaccharide>
+    </monosaccharideFilter>
+	<monosaccharideFilter min="0" label="dHex" name="dHex" terminalOnly="false" classification="Monosaccharide">
+        <description>deoxy hexose (Fucose, Rhamnose etc.) residues</description>
+        <monosaccharide allowModifications="false" allowSubstituents="false">
+            <sequence>RES
+1b:x-HEX-x:x|6:d</sequence>
+        </monosaccharide>
+    </monosaccharideFilter>
+    <monosaccharideFilter min="0" label="Fuc (terminal)" name="Fuc (terminal)" terminalOnly="true" classification="Motif">
+        <description>Terminal Fucose residues</description>
+        <monosaccharide allowModifications="false" allowSubstituents="false">
+            <sequence>RES
+1b:x-lgal-HEX-1:5|6:d</sequence>
+        </monosaccharide>
+    </monosaccharideFilter>
+	<monosaccharideFilter min="0" label="NeuAc" name="NeuAc" terminalOnly="false" classification="Monosaccharide">
+        <description>N-acetly Sialic Acid residues</description>
+        <monosaccharide allowModifications="false" allowSubstituents="false">
+            <sequence>RES
+1b:x-dgro-dgal-NON-2:6|1:a|2:keto|3:d
+2s:n-acetyl
+LIN
+1:1d(5+1)2n</sequence>
+        </monosaccharide>
+    </monosaccharideFilter>
+        <monosaccharideFilter min="0" label="GalNAc (terminal)" name="GalNAc (terminal)" terminalOnly="true">
+        <description>Terminal GalNAc residues</description>
+        <monosaccharide allowModifications="false" allowSubstituents="false">
+            <sequence>RES
+1b:x-dgal-HEX-1:5
+2s:n-acetyl
+LIN
+1:1d(2+1)2n</sequence>
+        </monosaccharide>
+    </monosaccharideFilter>
+    <monosaccharideFilter min="0" label="NeuGc" name="NeuGc" terminalOnly="false" classification="Monosaccharide">
+        <description>N-Glycolyl Sialic Acid residues</description>
+        <monosaccharide allowModifications="false" allowSubstituents="false">
+            <sequence>RES
+1b:x-dgro-dgal-NON-2:6|1:a|2:keto|3:d
+2s:n-glycolyl
+LIN
+1:1d(5+1)2n</sequence>
+        </monosaccharide>
+    </monosaccharideFilter>	
+    <antennaFilter min="0" label="# Antenna" name="# Antenna" filterBisection="true" classification="Motif">
+        <description>Number of branches</description>
+        <monosaccharide allowSubstituents="true" allowModifications="false">
+            <sequence>RES
+1b:a-lgal-HEX-1:5
+            </sequence>
+        </monosaccharide>
+    </antennaFilter>
+    <monosaccharideFilter min="0" label="Neu" name="Neu" terminalOnly="false" classification="Monosaccharide">
+        <description>Neuraminic Acid residues</description>
+        <monosaccharide allowModifications="false" allowSubstituents="false">
+            <sequence>RES
+1b:x-dgro-dgal-NON-2:6|1:a|2:keto|3:d
+2s:amino
+LIN
+1:1d(5+1)2n</sequence>
+        </monosaccharide>
+    </monosaccharideFilter>	
+    <substructureFilter label="GalGal" name="GalGal" classification="Motif">
+        <description>Gal(1-3)Gal Epitope</description>
+        <substructure reducingEnd="false">
+            <sequence>RES
+1b:x-dgal-HEX-1:5
+2b:a-dgal-HEX-1:5
+LIN
+1:1o(3+1)2d</sequence>
+        </substructure>
+    </substructureFilter>
+    <monosaccharideFilter min="0" label="Pentose" name="Pentose" terminalOnly="false" classification="Monosaccharide">
+        <description>Number of Pentose (Xylose, Arabinose etc.) residues</description>
+        <monosaccharide allowModifications="false" allowSubstituents="false">
+            <sequence>RES
+1b:x-PEN-x:x</sequence>
+        </monosaccharide>
+    </monosaccharideFilter>
+    <substructureFilter label="LacDiNAc" name="LacDiNAc" classification="Motif">
+        <description>GalNAcGlcNAc</description>
+        <substructure reducingEnd="false">
+            <sequence>RES
+1b:x-dglc-HEX-1:5
+2s:n-acetyl
+3b:x-dgal-HEX-1:5
+4s:n-acetyl
+LIN
+1:1d(2+1)2n
+2:1o(-1+1)3d
+3:3d(2+1)4n</sequence>
+        </substructure>
+    </substructureFilter>
+	<monosaccharideFilter min="0" label="KDN" name="KDN" terminalOnly="false" classification="Monosaccharide">
+        <description>2-Keto-3-deoxy-D-glycero-D-galacto-nononic acid residues</description>
+        <monosaccharide allowModifications="false" allowSubstituents="false">
+            <sequence>RES
+1b:x-dgro-dgal-NON-x:x|1:a|2:keto|3:d</sequence>
+        </monosaccharide>
+    </monosaccharideFilter>
+    <substructureFilter label="Fuc-LacDiNAc" name="Fuc-LacDiNAc" classification="Motif">
+        <description>GalNAc(Fuc)GlcNAc</description>
+        <substructure reducingEnd="false">
+            <sequence>RES
+1b:x-dglc-HEX-1:5
+2s:n-acetyl
+3b:x-lgal-HEX-1:5|6:d
+4b:x-dgal-HEX-1:5
+5s:n-acetyl
+LIN
+1:1d(2+1)2n
+2:1o(-1+1)3d
+3:1o(-1+1)4d
+4:4d(2+1)5n</sequence>
+        </substructure>
+    </substructureFilter>
+    <monosaccharideFilter min="0" label="HexA" name="HexA" terminalOnly="false" classification="Monosaccharide">
+        <description>Hexuronic Acid (GlcA, ManA, GalA etc.) residues</description>
+        <monosaccharide allowModifications="false" allowSubstituents="false">
+            <sequence>RES
+1b:x-HEX-x:x|6:a</sequence>
+        </monosaccharide>
+    </monosaccharideFilter>
+    <substructureFilter label="Lewis X/A" name="Lewis X/A" classification="Motif">
+        <description>Gal(Fuc)GlcNAc-</description>
+        <substructure reducingEnd="false">
+            <sequence>RES
+1b:x-dglc-HEX-1:5
+2b:x-dgal-HEX-1:5
+3b:x-lgal-HEX-1:5|6:d
+4s:n-acetyl
+LIN
+1:1o(-1+1)2d
+2:1o(-1+1)3d
+3:1d(2+1)4n</sequence>
+        </substructure>
+    </substructureFilter>
+    <monosaccharideFilter min="0" label="HexN" name="HexN" terminalOnly="false" classification="Monosaccharide">
+        <description>Hexosamine (Glucosamine, Mannosamine, Galactosamine etc.) residues</description>
+        <monosaccharide allowModifications="false" allowSubstituents="false">
+            <sequence>RES
+1b:x-HEX-x:x|1:a
+2s:amino
+LIN
+1:1d(2+1)2n</sequence>
+        </monosaccharide>
+    </monosaccharideFilter>
+    <substructureFilter label="Sialyl-Lewis X/A" name="Sialyl-Lewis X/A" classification="Motif">
+        <description>NeuAcGal(Fuc)GlcNAc-</description>
+        <substructure reducingEnd="false">
+            <sequence>RES
+1b:x-dglc-HEX-1:5
+2b:x-lgal-HEX-1:5|6:d
+3b:x-dgal-HEX-1:5
+4b:x-dgro-dgal-NON-2:6|1:a|2:keto|3:d
+5s:n-acetyl
+6s:n-acetyl
+LIN
+1:1o(-1+1)2d
+2:1o(-1+1)3d
+3:3o(-1+2)4d
+4:4d(5+1)5n
+5:1d(2+1)6n</sequence>
+        </substructure>
+    </substructureFilter>
+    <monosaccharideFilter min="0" label="KDO" name="KDO" terminalOnly="false" classification="Monosaccharide">
+        <description>3-Deoxy-D-manno-oct-2-ulosonic acid residues</description>
+        <monosaccharide allowModifications="false" allowSubstituents="false">
+            <sequence>RES
+1b:x-dman-OCT-x:x|1:a|2:keto|3:d</sequence>
+        </monosaccharide>
+    </monosaccharideFilter>
+	<substructureFilter label="Lewis Y/B" name="Lewis Y/B" classification="Motif">
+        <description>FucGal(Fuc)GlcNAc-</description>
+        <substructure reducingEnd="false">
+            <sequence>RES
+1b:x-dglc-HEX-1:5
+2b:x-lgal-HEX-1:5|6:d
+3b:x-dgal-HEX-1:5
+4b:x-lgal-HEX-1:5|6:d
+5s:n-acetyl
+LIN
+1:1o(-1+1)2d
+2:1o(-1+1)3d
+3:3o(-1+1)4d
+4:1d(2+1)5n</sequence>
+        </substructure>
+    </substructureFilter>
+    
+	<substituentFilter min="0" label="Sulphate" name="Sulphate" substituent="sulfate" classification="Modification">
+        <description>Sulphate modification</description>
+    </substituentFilter>
+	<glycanFeatureFilter name="Fully defined" label="Fully defined" reducingAlditolAllowed="true" residueSugAllowed="false" unconnectedTreeAllowed="false" unitCyclicAllowed="false" unitProbableAllowed="false" unitRepeatAllowed="false" unitUndAllowed="false" unknownAnomerAllowed="false" unknownBasetypeAllowed="false" unknownConfigurationAllowed="false" unknownLinkagePositionAllowed="false" unknownLinkageTypeAllowed="false" unknownModificationPositionAllowed="false" unknownRepeatAllowed="false" unknownRingsizeAllowed="false" classification="Motif">
+	    <description>Fully defined oligosaccharides, reducing end alditol allowed</description>
+	</glycanFeatureFilter>
+    
+    <substituentFilter min="0" label="Phosphate" name="Phosphate" substituent="phosphate" classification="Modification">
+        <description>Phosphate modification</description>
+    </substituentFilter>
+    <substructureFilter label="Bisected" name="bisected" classification="Motif">
+    	<description>N-Glycan structures with a GlcNAc at 4 position of the core Mannose</description>
+    	<substructure reducingEnd="false">
+    		<sequence>RES
+1b:b-dman-HEX-1:5
+2b:a-dman-HEX-1:5
+3b:b-dglc-HEX-1:5
+4s:n-acetyl
+5b:a-dman-HEX-1:5
+LIN
+1:1o(3+1)2d
+2:1o(4+1)3d
+3:3d(2+1)4n
+4:1o(6+1)5d</sequence>
+    	</substructure>
+    </substructureFilter>
+    <substructureFilter label="Core-Fuc" name="core-Fuc" classification="Motif">
+    	<description>N-Glycan structures with core Fucose</description>
+    	<substructure reducingEnd="true">
+    		<sequence>RES
+1b:b-dglc-HEX-1:5
+2s:n-acetyl
+3b:a-lgal-HEX-1:5|6:d
+LIN
+1:1d(2+1)2n
+2:1o(6+1)3d</sequence>
+    	</substructure>
+    </substructureFilter>
+    <substructureFilter label="Blood Group O,H" name="Blood Group O,H" classification="Motif">
+        <description>FucGal-</description>
+        <substructure reducingEnd="false">
+            <sequence>RES
+1b:x-dgal-HEX-1:5
+2b:x-lgal-HEX-1:5|6:d
+LIN
+1:1o(-1+1)2d</sequence>
+        </substructure>
+    </substructureFilter>
+    <substructureFilter label="Sialyl-LacDiNAc" name="Sialyl-LacDiNAc" classification="Motif">
+        <description>NeuAcGalNAcGlcNAc</description>
+        <substructure reducingEnd="false">
+            <sequence>RES
+1b:x-dglc-HEX-1:5
+2b:x-dgal-HEX-1:5
+3b:x-dgro-dgal-NON-2:6|1:a|2:keto|3:d
+4s:n-acetyl
+5s:n-acetyl
+6s:n-acetyl
+LIN
+1:1o(-1+1)2d
+2:2o(-1+2)3d
+3:3d(5+1)4n
+4:2d(2+1)5n
+5:1d(2+1)6n</sequence>
+        </substructure>
+    </substructureFilter>
+    <substructureFilter label="Blood Group B" name="Blood Group B" classification="Motif">
+        <description>Gal(Fuc)Gal-</description>
+        <substructure reducingEnd="false">
+            <sequence>RES
+1b:x-dgal-HEX-1:5
+2b:x-lgal-HEX-1:5|6:d
+3b:x-dgal-HEX-1:5
+LIN
+1:1o(-1+1)2d
+2:1o(-1+1)3d</sequence>
+        </substructure>
+    </substructureFilter>
+    <substructureFilter label="Sda Antigen" name="Sda Antigen" classification="Motif">
+        <description>GalNAc(NeuAc)Gal</description>
+        <substructure reducingEnd="false">
+            <sequence>RES
+1b:b-dgal-HEX-1:5
+2b:a-dgro-dgal-NON-2:6|1:a|2:keto|3:d
+3s:n-acetyl
+4b:b-dgal-HEX-1:5
+5s:n-acetyl
+LIN
+1:1o(-1+1)2d
+2:2d(5+1)3n
+3:1o(-1+1)4d
+4:4d(2+1)5n</sequence>
+        </substructure>
+    </substructureFilter>
+    <substructureFilter label="Sialyl-Fuc-LacDiNAc" name="Sialyl-Fuc-LacDiNAc" classification="Motif">
+        <description>NeuAcGalNAc(Fuc)GlcNAc</description>
+        <substructure reducingEnd="false">
+            <sequence>RES
+1b:x-dglc-HEX-1:5
+2b:x-lgal-HEX-1:5|6:d
+3b:x-dgal-HEX-1:5
+4b:x-dgro-dgal-NON-2:6|1:a|2:keto|3:d
+5s:n-acetyl
+6s:n-acetyl
+7s:n-acetyl
+LIN
+1:1o(-1+1)2d
+2:1o(-1+1)3d
+3:3o(-1+2)4d
+4:4d(5+1)5n
+5:3d(2+1)6n
+6:1d(2+1)7n</sequence>
+        </substructure>
+    </substructureFilter>
+    <substructureFilter label="Blood Group A" name="Blood Group A" classification="Motif">
+        <description>GalNAc(Fuc)Gal-</description>
+        <substructure reducingEnd="false">
+            <sequence>RES
+1b:x-dgal-HEX-1:5
+2b:x-lgal-HEX-1:5|6:d
+3b:x-dgal-HEX-1:5
+4s:n-acetyl
+LIN
+1:1o(-1+1)2d
+2:1o(-1+1)3d
+3:3d(2+1)4n</sequence>
+        </substructure>
+    </substructureFilter>
+    <combinationFilter label="N-Glycan Type" name="N-Glycan Type" classification="Motif">
+	    <description>Filter by the type of N-Glycan (complex, hybrid, high mannose)</description>
+	    <order filterName="High mannose N-glycan" order="0"/>
+	    <order filterName="Complex N-glycan" order="1"/>
+	    <order filterName="Hybrid N-glycan" order="2"/>
+	    <substructureFilter label="HighMan" name="High mannose N-glycan">
+	        <description>High mannose N-glycan</description>
+	        <substructure reducingEnd="true">
+	            <sequence>RES
+1b:x-dglc-HEX-1:5
+2s:n-acetyl
+3b:b-dglc-HEX-1:5
+4s:n-acetyl
+5b:b-dman-HEX-1:5
+6b:a-dman-HEX-1:5
+7b:x-dman-HEX-1:5
+8b:a-dman-HEX-1:5
+9b:x-dman-HEX-1:5
+LIN
+1:1d(2+1)2n
+2:1o(4+1)3d
+3:3d(2+1)4n
+4:3o(4+1)5d
+5:5o(3+1)6d
+6:6o(-1+1)7d
+7:5o(6+1)8d
+8:8o(-1+1)9d</sequence>
+	        </substructure>
+	    </substructureFilter>
+	    <substructureFilter label="Complex" name="Complex N-glycan">
+	        <description>Complex N-glycan</description>
+	        <substructure reducingEnd="true">
+	            <sequence>RES
+1b:x-dglc-HEX-1:5
+2s:n-acetyl
+3b:b-dglc-HEX-1:5
+4s:n-acetyl
+5b:b-dman-HEX-1:5
+6b:a-dman-HEX-1:5
+7b:x-dglc-HEX-1:5
+8s:n-acetyl
+9b:a-dman-HEX-1:5
+10b:x-dglc-HEX-1:5
+11s:n-acetyl
+LIN
+1:1d(2+1)2n
+2:1o(4+1)3d
+3:3d(2+1)4n
+4:3o(4+1)5d
+5:5o(3+1)6d
+6:6o(-1+1)7d
+7:7d(2+1)8n
+8:5o(6+1)9d
+9:9o(-1+1)10d
+10:10d(2+1)11n</sequence>
+	        </substructure>
+	    </substructureFilter>
+	    <substructureFilter label="Hybrid" name="Hybrid N-glycan">
+	        <description>Hybrid N-glycan</description>
+	        <substructure reducingEnd="true">
+	            <sequence>RES
+1b:x-dglc-HEX-1:5
+2s:n-acetyl
+3b:b-dglc-HEX-1:5
+4s:n-acetyl
+5b:b-dman-HEX-1:5
+6b:a-dman-HEX-1:5
+7b:x-dglc-HEX-1:5
+8s:n-acetyl
+9b:a-dman-HEX-1:5
+10b:x-dman-HEX-1:5
+LIN
+1:1d(2+1)2n
+2:1o(4+1)3d
+3:3d(2+1)4n
+4:3o(4+1)5d
+5:5o(3+1)6d
+6:6o(-1+1)7d
+7:7d(2+1)8n
+8:5o(6+1)9d
+9:9o(-1+1)10d</sequence>
+	        </substructure>
+	    </substructureFilter>	
+	</combinationFilter>
+	<modificationFilter min="0" label="Acidic" name="Acidic residues" modification="a" classification="Motif">
+        <description>Residues with acidic modifications</description> 
+    </modificationFilter>
+	<combinationFilter label="O-Glycan Type" name="O-Glycan Type" classification="Motif">
+	    <description>Filter by the type of O-Glycan (O-GalNAc, O-GlcNAc, O-Fucose, O-Glucose, O-Mannose)</description>
+	    <order filterName="O-GalNAc" order="0"/>
+	    <order filterName="O-GlcNAc" order="1"/>
+	    <order filterName="O-Fucose" order="2"/>
+	    <order filterName="O-Glucose" order="0"/>
+	    <order filterName="O-Mannose" order="0"/>
+	    <substructureFilter label="O-GalNAc" name="O-GalNAc">
+	        <description>O-GalNAc O-glycan</description>
+	        <substructure reducingEnd="true">
+	            <sequence>RES
+1b:x-dgal-HEX-1:5
+2s:n-acetyl
+LIN
+1:1d(2+1)2n</sequence>
+	        </substructure>
+	    </substructureFilter>
+	    <substructureFilter label="O-GlcNAc" name="O-GlcNAc">
+	        <description>O-GlcNAc O-glycan</description>
+	        <substructure reducingEnd="true">
+	            <sequence>RES
+1b:x-dglc-HEX-1:5
+2s:n-acetyl
+LIN
+1:1d(2+1)2n</sequence>
+	        </substructure>
+	    </substructureFilter>
+	    <substructureFilter label="O-Fucose" name="O-Fucose">
+	        <description>O-Fucose O-glycan</description>
+	        <substructure reducingEnd="true">
+	            <sequence>RES
+1b:x-lgal-HEX-1:5|6:d</sequence>
+	        </substructure>
+	    </substructureFilter>
+	    <substructureFilter label="O-Glucose" name="O-Glucose">
+	        <description>O-Glucose O-glycan</description>
+	        <substructure reducingEnd="true">
+	            <sequence>RES
+1b:x-dglc-HEX-1:5</sequence>
+	        </substructure>
+	    </substructureFilter>	
+	    <substructureFilter label="O-Mannose" name="O-Mannose">
+	        <description>O-Mannose O-glycan</description>
+	        <substructure reducingEnd="true">
+	            <sequence>RES
+1b:x-dman-HEX-1:5</sequence>
+	        </substructure>
+	    </substructureFilter>
+	</combinationFilter>
+</filtersLibrary>
